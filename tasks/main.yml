@@ -6,13 +6,23 @@
  
   tasks:
   - name: Launch instance
-    amazon.aws.ec2:
-      key_name: "{{ keypair }}"
-      group: "{{ security_group }}"
-      instance_type: "{{ instance_type }}"
-      image: "{{ image }}"
+    ec2:
+      instance_type: t2.micro
+      key_name: webserver
+      keypair: Labkey
+      image: ami-0d8d212151031f51c
+      region: us-east-2
       wait: true
-      region: "{{ region }}"
-     #vpc_subnet_id: subnet-29e63245
-      assign_public_ip: yes
+      group: default
+      assign_public_ip: yes 
     register: ec2
+    # amazon.aws.ec2:
+    #   key_name: "{{ keypair }}"
+    #   group: "{{ security_group }}"
+    #   instance_type: "{{ instance_type }}"
+    #   image: "{{ image }}"
+    #   wait: true
+    #   region: "{{ region }}"
+    #  #vpc_subnet_id: subnet-29e63245
+    #   assign_public_ip: yes
+    # register: ec2
