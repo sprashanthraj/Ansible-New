@@ -5,13 +5,8 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  tasks:
-  - name: launching ec2
-    ec2:
-      instance_type: t2.micro
-      key_name: Labkey
-      image: ami-0277b52859bac6f4b
-      count: 1
-      group: default
-      region: us-east-2
-    register: ec2
+
+  roles:
+    - ec2_instance
+    - terminate_ec2_instance
+   

@@ -1,0 +1,4 @@
+---
+# vars file for terminate_ec2_instance
+
+region: us-east-2

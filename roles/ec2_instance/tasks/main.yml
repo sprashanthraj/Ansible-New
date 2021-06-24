@@ -1,0 +1,14 @@
+---
+# tasks file for ec2_instance
+
+- name: launching ec2
+  ec2:
+    instance_type: "{{ instance_type }}" 
+    key_name: "{{ key_name }}"
+    image: "{{ image }}"
+    count: "{{ count }}"
+    group: "{{ group }}"
+    region: "{{ region }}"
+  register: ec2
+   
+
