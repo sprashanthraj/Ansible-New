@@ -1,0 +1,15 @@
+
+
+---
+
+hosts: localhost
+connection: local
+gather_facts: false
+tasks:
+- name: Deploy new machine 
+  instance:   
+    image: ami-0d8d212151031f51c
+    instance_type: t2.micro
+    wait: true
+    group: default
+  register: ec2
