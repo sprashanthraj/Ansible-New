@@ -1,2 +1,23 @@
 ---
 # tasks file for security_group
+# - name: creating the new security group
+#   hosts: localhost
+#   gather_facts: false
+#   tasks:
+  - name: SG creation
+    ec2_group:
+      name: Test
+      vpc_id: vpc-65f1cc0d
+      region: us-east-2
+      description: default VPC security group
+      rules:
+      - proto: tcp
+        ports:
+        - 80
+        cidr_ip: 0.0.0.0/0
+        rule_desc: allow all on port 80
+      tags:
+        Name: sg1
+
+    register: sg
+   

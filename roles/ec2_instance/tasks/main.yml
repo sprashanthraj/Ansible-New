@@ -7,8 +7,12 @@
     key_name: "{{ key_name }}"
     image: "{{ image }}"
     count: "{{ count }}"
-    group: "{{ group }}"
+    group_id: "{{ sg.group_id }}"
     region: "{{ region }}"
-  register: ec2
+  register: instance
+
+  tags: 
+    - instance1
    
 
+ 
