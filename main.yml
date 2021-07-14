@@ -11,7 +11,7 @@
   roles:
     - security_group # creating new a test security group
     - ec2_instance # deploy ec2 instance
-    - terminate_ec2_instance # tasks file for terminate_ec2_instance
+   # - terminate_ec2_instance # tasks file for terminate_ec2_instance
 
 
         
